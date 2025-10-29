@@ -38,6 +38,6 @@ def read_images_and_generate_urls(directory_path, url_prefix, output_file="outpu
 # 使用示例
 if __name__ == "__main__":
     # 示例用法
-    directory = "/Users/jiangping/Downloads/艾力斯审核图片/训练数据集/本地训练集"  # 替换为你的图片目录路径
+    directory = "datasets/prepare/images"  # 替换为你的图片目录路径
     prefix = "http://oss.fyxsyz.cn/"
     read_images_and_generate_urls(directory, prefix)
