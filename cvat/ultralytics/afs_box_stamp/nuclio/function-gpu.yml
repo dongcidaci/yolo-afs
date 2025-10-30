@@ -1,0 +1,38 @@
+metadata:
+  name: als-box-stamp-detector
+  namespace: cvat
+  annotations:
+    name: "艾力斯赠药签收验证"
+    type: detector
+    spec: |
+      [
+        { "id": 1, "name": "afs_box", "type": "rectangle" },
+        { "id": 2, "name": "afs_stamp", "type": "rectangle" },
+      ]
+
+spec:
+  description: 艾力斯赠药签收验证模型GPU版本
+  runtime: python
+  handler: main:handler
+  eventTimeout: 30s
+
+  build:
+    baseImage: ultralytics/ultralytics:latest
+
+  triggers:
+    myHttpTrigger:
+      numWorkers: 1
+      kind: "http"
+      workerAvailabilityTimeoutMilliseconds: 10000
+      attributes:
+        maxRequestBodySize: 33554432 # 32MB
+
+  resources:
+    limits:
+      nvidia.com/gpu: 1
+
+  platform:
+    attributes:
+      restartPolicy:
+        name: always
+        maximumRetryCount: 3
