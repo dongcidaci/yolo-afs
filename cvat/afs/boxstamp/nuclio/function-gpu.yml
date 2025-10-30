@@ -17,7 +17,7 @@ spec:
   eventTimeout: 30s
 
   build:
-    image: cvat.pth.afs.boxstamp:latest
+    # image: cvat.pth.afs.boxstamp:latest
     baseImage: ultralytics/ultralytics:latest
 
   triggers:
