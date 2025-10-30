@@ -23,7 +23,7 @@ def init_context(context):
 
     # 加载模型
     try:
-        MODEL_PATH = "/opt/nuclio/best.pt"
+        MODEL_PATH = "/opt/nuclio/afs/boxstamp/nuclio/best.pt"
         context.user_data.model_handler = YOLO(MODEL_PATH)
         logger.info(f"✅ YOLO 模型加载成功: {MODEL_PATH}")
     except Exception as e:

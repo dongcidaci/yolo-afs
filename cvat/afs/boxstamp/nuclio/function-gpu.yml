@@ -4,7 +4,7 @@ metadata:
   annotations:
     name: "艾力斯赠药签收验证"
     type: detector
-    spec: |
+    spec:
       [
         { "id": 1, "name": "afs_box", "type": "rectangle" },
         { "id": 2, "name": "afs_stamp", "type": "rectangle" },
@@ -17,6 +17,7 @@ spec:
   eventTimeout: 30s
 
   build:
+    image: cvat.pth.afs.boxstamp:latest
     baseImage: ultralytics/ultralytics:latest
 
   triggers:
